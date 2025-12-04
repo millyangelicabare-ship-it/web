@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rincón de Milly - Restaurante</title>
+    <link rel="stylesheet" href="imagen/normalize.css">
+    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>El Rincón de Milly</h1>
+                
+            </div>
+
+            <nav class="nav">
+                <ul class="navegacion">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#carrito">Carrito</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="cart-button" onclick="toggleCart()">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="auth-buttons">
+                    <a href="#" class="btn-auth">Iniciar Sesión</a>
+                    <a href="#" class="btn-auth btn-register">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Un rincón lleno de dulzura</h1>
+                <p>Descubre los sabores más exquisitos en un ambiente acogedor. Nuestros deliciosos platillos están esperando por ti.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Ver Menú</button>
+                    <button class="btn-secondary">Hacer Reserva</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="imagen/Restaurant.jpg" alt="Plato principal del restaurante">
+            </div>
+        </div>
+    </section>
+    <!-- Sección de Menú -->
+    <main id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Platos Populares</h2>
+                <p>Una selección cuidadosa de nuestros platillos más solicitados</p>
+            </div>
+            
+            <div class="menu-grid">
+                <article class="menu-item">
+                    <div class="item-image">
+                        <img src="imagen/Hamburger.jpg" alt="Hamburguesa de Carne">
+                    </div>
+                    <div class="item-content">
+                        <h3>Hamburguesa de Carne</h3>
+                        <p>Jugosa hamburguesa de carne 100% res, con verduras frescas, queso derretido y nuestra salsa especial.</p>
+                        <div class="item-footer">
+                            <span class="price">$500</span>
+                            <button class="btn-add" onclick="addToCart('Hamburguesa de Carne', 500, 'imagen/Hamburgesa.jpeg')">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image">
+                        <img src="imagen/Tacos.jpg" alt="Tacos de Carne">
+                    </div>
+                    <div class="item-content">
+                        <h3>Tacos de Carne de Res</h3>
+                        <p>Deliciosos tacos con carne de res marinada, acompañados de cebolla, cilantro y salsa verde.</p>
+                        <div class="item-footer">
+                            <span class="price">$350</span>
+                            <button class="btn-add" onclick="addToCart('Tacos de Carne de Res', 350, 'imagen/Tacos.jpeg')">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image">
+                        <img src="imagen/Papas.jpg" alt="Papas Fritas">
+                    </div>
+                    <div class="item-content">
+                        <h3>Papas Fritas Doradas</h3>
+                        <p>Crujientes papas fritas cortadas a mano, sazonadas con nuestras especias secretas.</p>
+                        <div class="item-footer">
+                            <span class="price">$200</span>
+                            <button class="btn-add" onclick="addToCart('Papas Fritas Doradas', 200, 'imagen/Papas.jpg')">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image">
+                        <img src="imagen/Pasta.jpg" alt="Espaguetis">
+                    </div>
+                    <div class="item-content">
+                        <h3>Espaguetis en Salsa Roja</h3>
+                        <p>Pasta al dente con nuestra salsa de tomate casera, albahaca fresca y queso parmesano.</p>
+                        <div class="item-footer">
+                            <span class="price">$300</span>
+                            <button class="btn-add" onclick="addToCart('Espaguetis en Salsa Roja', 300, 'imagen/Pasta.jpg')">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image">
+                        <img src="imagen/Mofongo en Salsa de Queso.jpeg" alt="Mofongo">
+                    </div>
+                    <div class="item-content">
+                        <h3>Mofongo en Salsa de Queso</h3>
+                        <p>Tradicional mofongo con una cremosa salsa de queso gratinado, especialidad de la casa.</p>
+                        <div class="item-footer">
+                            <span class="price">$600</span>
+                            <button class="btn-add" onclick="addToCart('Mofongo en Salsa de Queso', 600, 'imagen/Mofongo en Salsa de Queso.jpeg')">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image">
+                        <img src="imagen/Bandeja de Pastelitos.jpeg" alt="Bandeja de Pastelitos">
+                    </div>
+                    <div class="item-content">
+                        <h3>Bandeja de Pastelitos</h3>
+                        <p>Variedad de pastelitos artesanales perfectos para compartir en familia o con amigos.</p>
+                        <div class="item-footer">
+                            <span class="price">$1000</span>
+                            <button class="btn-add" onclick="addToCart('Bandeja de Pastelitos', 1000, 'imagen/Bandeja de Pastelitos.jpeg')">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image">
+                        <img src="imagen/Bebidas.webp" alt="Bebidas">
+                    </div>
+                    <div class="item-content">
+                        <h3>Bebidas Refrescantes</h3>
+                        <p>Selección de bebidas naturales, jugos frescos y refrescos para acompañar tu comida.</p>
+                        <div class="item-footer">
+                            <span class="price">$100</span>
+                            <button class="btn-add" onclick="addToCart('Bebidas Refrescantes', 100, 'imagen/Bebidas.webp')">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image">
+                        <img src="imagen/Postres.jpg" alt="Postres">
+                    </div>
+                    <div class="item-content">
+                        <h3>Postres Caseros</h3>
+                        <p>Deliciosos postres preparados con amor, perfectos para endulzar tu experiencia.</p>
+                        <div class="item-footer">
+                            <span class="price">$250</span>
+                            <button class="btn-add" onclick="addToCart('Postres Caseros', 250, 'imagen/Postres.jpg')">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="menu-item">
+                    <div class="item-image">
+                        <img src="imagen/Wafles.jpg" alt="Wafles">
+                    </div>
+                    <div class="item-content">
+                        <h3>Wafles Especiales</h3>
+                        <p>Wafles dorados servidos con frutas frescas, miel y crema batida para un desayuno perfecto.</p>
+                        <div class="item-footer">
+                            <span class="price">$450</span>
+                            <button class="btn-add" onclick="addToCart('Wafles Especiales', 450, 'imagen/Wafles.jpg')">Agregar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sección del Carrito de Compras -->
+    <section id="carrito" class="cart-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🛒 Carrito de Compras</h2>
+                <p>Revisa tus productos seleccionados y finaliza tu pedido</p>
+            </div>
+
+            <!-- Carrito Vacío -->
+            <div id="empty-cart" class="empty-cart">
+                <div class="empty-cart-content">
+                    <div class="empty-cart-icon">🛒</div>
+                    <h3>Tu carrito está vacío</h3>
+                    <p>¡Agrega algunos deliciosos platillos de nuestro menú!</p>
+                    <a href="#menu" class="btn-primary">Explorar Menú</a>
+                </div>
+            </div>
+
+            <!-- Carrito con Productos -->
+            <div id="cart-content" class="cart-content" style="display: none;">
+                <div class="cart-items">
+                    <div class="cart-header">
+                        <h3>Productos en tu carrito</h3>
+                        <button class="btn-clear-cart" onclick="clearCart()">🗑️ Vaciar Carrito</button>
+                    </div>
+                    
+                    <div id="cart-items-list" class="cart-items-list">
+                        <!-- Los productos se agregarán aquí dinámicamente -->
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <div class="summary-card">
+                        <h3>Resumen del Pedido</h3>
+                        <div class="summary-item">
+                            <span>Subtotal:</span>
+                            <span id="cart-subtotal">$0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Envío:</span>
+                            <span>$50</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total:</span>
+                            <span id="cart-total">$50</span>
+                        </div>
+                        
+                        <div class="checkout-form">
+                            <h4>Información de Entrega</h4>
+                            <div class="form-group">
+                                <label for="customer-name">Nombre Completo:</label>
+                                <input type="text" id="customer-name" placeholder="Tu nombre completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-phone">Teléfono:</label>
+                                <input type="tel" id="customer-phone" placeholder="(809) 000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-address">Dirección:</label>
+                                <textarea id="customer-address" placeholder="Dirección completa para la entrega"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="delivery-time">Hora de Entrega:</label>
+                                <select id="delivery-time">
+                                    <option value="">Seleccionar hora</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="1:00 PM">1:00 PM</option>
+                                    <option value="2:00 PM">2:00 PM</option>
+                                    <option value="6:00 PM">6:00 PM</option>
+                                    <option value="7:00 PM">7:00 PM</option>
+                                    <option value="8:00 PM">8:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-checkout" onclick="processOrder()">
+                            <span>💳</span>
+                            Procesar Pedido
+                        </button>
+                        
+                        <div class="payment-methods">
+                            <h4>Métodos de Pago</h4>
+                            <div class="payment-options">
+                                <div class="payment-option">
+                                    <input type="radio" id="cash" name="payment" value="cash" checked>
+                                    <label for="cash">💵 Efectivo</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="card" name="payment" value="card">
+                                    <label for="card">💳 Tarjeta</label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="transfer" name="payment" value="transfer">
+                                    <label for="transfer">🏦 Transferencia</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overlay del Carrito (Modal) -->
+    <div id="cart-overlay" class="cart-overlay" onclick="closeCart()">
+        <div class="cart-modal" onclick="event.stopPropagation()">
+            <div class="cart-modal-header">
+                <h3>🛒 Tu Carrito</h3>
+                <button class="close-cart" onclick="closeCart()">✕</button>
+            </div>
+            <div class="cart-modal-body">
+                <div id="cart-modal-items">
+                    <!-- Los productos se mostrarán aquí -->
+                </div>
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-modal-total">
+                    <strong>Total: <span id="modal-total">$0</span></strong>
+                </div>
+                <div class="cart-modal-actions">
+                    <button class="btn-continue-shopping" onclick="closeCart()">Seguir Comprando</button>
+                    <a href="#carrito" class="btn-checkout" onclick="closeCart()">Ver Carrito Completo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Servicios -->
+<section id="servicios" class="services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nuestros Servicios</h2>
+            <p>En El Rincón de Milly ofrecemos mucho más que deliciosa comida. Nuestro compromiso es brindarte una experiencia completa, cómoda y acogedora para que disfrutes cada visita.</p>
+        </div>
+
+        <div class="services-grid">
+            <article class="service-item">
+                <div class="service-icon">
+                    <i class="🛍️">🛍️</i>
+                </div>
+                <div class="service-content">
+                    <h3>Comida para Llevar</h3>
+                    <p>Prepara tus pedidos y llévate tus platos favoritos a casa o al trabajo, siempre con el mismo sabor casero.</p>
+                </div>
+            </article>
+
+            <article class="service-item">
+                <div class="service-icon">
+                    <i class="📅">📅</i>
+                </div>
+                <div class="service-content">
+                    <h3>Reservaciones</h3>
+                    <p>Haz tu reserva con anticipación para celebraciones familiares, cumpleaños o reuniones con amigos.</p>
+                </div>
+            </article>
+
+            <article class="service-item">
+                <div class="service-icon">
+                    <i class="🎉">🎉</i>
+                </div>
+                <div class="service-content">
+                    <h3>Eventos Especiales</h3>
+                    <p>Ofrecemos servicio para eventos con menú personalizado y atención especial para tus invitados.</p>
+                </div>
+            </article>
+
+            <article class="service-item">
+                <div class="service-icon">
+                    <i class="🚚">🚚</i>
+                </div>
+                <div class="service-content">
+                    <h3>Entrega a Domicilio</h3>
+                    <p>Disfruta nuestros platillos sin salir de casa. Realiza tu pedido por teléfono o en línea.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Sección Acerca de Nosotros -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-header">
+                        <h2>Nuestra Historia</h2>
+                        <p>El Rincón de Milly nació del sueño de crear un espacio donde las familias puedan disfrutar de comida casera preparada con amor. Desde nuestros humildes comienzos, hemos crecido manteniendo siempre nuestros valores de calidad, sabor auténtico y servicio excepcional.</p>
+                        <p>Cada platillo es preparado con ingredientes frescos y recetas que han pasado de generación en generación, creando esa experiencia única que nos caracteriza.</p>
+                    </div>
+
+                    <div class="mission-vision">
+                        <div class="mission">
+                            <h3>Misión</h3>
+                            <p>Es llenar de alegría los momentos de nuestros clientes con comidas y postres preparados con el corazón</p>
+                        </div>
+
+                        <div class="vision">
+                            <h3>Visión</h3>
+                            <p>Ser un lugar reconocido por ofrecer el auténtico sabor casero que une a las familias. Queremos convertirnos en el rincón favorito de quienes buscan buena comida, un ambiente cálido y un servicio lleno de amabilidad y cariño.</p>
+                        </div>
+                    </div>
+
+                    <div class="values">
+                        <h3>Valores</h3>
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <h4>Calidad</h4>
+                                <p>Nos comprometemos a ofrecer siempre productos frescos, elaborados con ingredientes seleccionados y un alto estándar de preparación para garantizar el mejor sabor.</p>
+                            </div>
+
+                            <div class="value-item">
+                                <h4>Amor por lo que hacemos</h4>
+                                <p>Cada plato se prepara con dedicación y cariño, porque creemos que el ingrediente más importante en la cocina es el amor.</p>
+                            </div>
+
+                            <div class="value-item">
+                                <h4>Compromiso</h4>
+                                <p>Trabajamos día a día para superar las expectativas de nuestros clientes, brindando un servicio responsable, puntual y de confianza.</p>
+                            </div>
+
+                            <div class="value-item">
+                                <h4>Autenticidad</h4>
+                                <p>Mantenemos la esencia del sabor casero que nos distingue, ofreciendo comidas y postres con el toque único.</p>
+                            </div>
+
+                            <div class="value-item">
+                                <h4>Innovación</h4>
+                                <p>Buscamos mejorar constantemente nuestras recetas y presentaciones para sorprender a nuestros clientes con nuevas delicias.</p>
+                            </div>
+
+                            <div class="value-item">
+                                <h4>Respeto</h4>
+                                <p>Valoramos a cada persona que forma parte de nuestro equipo y a cada cliente que confía en nosotros, fomentando relaciones basadas en la cortesía y la honestidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Herramientas y Contacto -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Herramientas y Contacto</h2>
+                <p>Facilitamos tu experiencia con nuestras herramientas útiles</p>
+            </div>
+            
+            <div class="tools-grid">
+                <!-- Sección de Pedidos -->
+                <div class="tool-item">
+                    <div class="tool-icon">
+                        <i class="🍽️">🍽️</i>
+                    </div>
+                    <h3>Realiza tu Pedido</h3>
+                    <p>Haz tu pedido fácil y rápido</p>
+                    <button class="btn-tool">Ver Menú</button>
+                </div>
+
+                <!-- Mapa -->
+                <div class="tool-item map-item">
+                    <div class="tool-icon">
+                        <i class="📍">📍</i>
+                    </div>
+                    <h3>Nuestra Ubicación</h3>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <img src="imagen/Maps.png" alt="Mapa de ubicación">
+                        </div>
+                        <p class="location-text">Calle1 #2 Hato Nuevo Manoguayabo</p>
+                    </div>
+                </div>
+
+                <!-- Chatbot -->
+                <div class="tool-item chatbot-item">
+                    <div class="tool-icon">
+                        <i class="💬">💬</i>
+                    </div>
+                    <h3>Chat de Ayuda</h3>
+                    <div class="chatbot-container">
+                        <div class="chatbot-window">
+                            <div class="chatbot-header">
+                                <span>Asistente Virtual</span>
+                                <span class="chatbot-status">🟢 En línea</span>
+                            </div>
+                            <div class="chatbot-messages">
+                                <div class="chatbot-message bot-message">
+                                    <span class="message-avatar">🤖</span>
+                                    <div class="message-content">
+                                        ¡Hola! Bienvenido a El Rincón de Milly. ¿En qué puedo ayudarte hoy? 😊
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chatbot-input">
+                                <input type="text" placeholder="Escribe tu mensaje..." disabled>
+                                <button disabled>📤</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="tool-item whatsapp-item">
+                    <div class="tool-icon whatsapp-icon">
+                        <i class="📱">📱</i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Contáctanos directo por WhatsApp</p>
+                    <a href="https://wa.me/18295138318" target="_blank" class="btn-whatsapp">
+                        <span class="whatsapp-logo">📱</span>
+                        Chatear ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>El Rincón de Milly</h3>
+                <p>Tu lugar favorito para disfrutar de la mejor comida casera</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p>📍 Dirección: Calle1 #2 Hato Nuevo Manoguayabo</p>
+                <p>📞 Teléfono: (829) 513-8318</p>
+                <p>✉️ Email: millyangelicabare@gmail.com</p>
+            </div>
+            <div class="footer-hours">
+                <h4>Horarios</h4>
+                <p>Lunes - Viernes: 8:00 AM - 10:00 PM</p>
+                <p>Sábados: 9:00 AM - 11:00 PM</p>
+                <p>Domingos: 10:00 AM - 9:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 El Rincón de Milly. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Variables globales del carrito
+let cart = [];
+let cartCount = 0;
+let cartTotal = 0;
+
+// Función para agregar productos al carrito
+function addToCart(name, price, image) {
+    // Verificar si el producto ya existe en el carrito
+    const existingItem = cart.find(item => item.name === name);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1
+        });
+    }
+    
+    updateCartUI();
+    showCartNotification(name);
+}
+
+// Función para actualizar la interfaz del carrito
+function updateCartUI() {
+    cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    
+    // Actualizar contador en el header
+    document.querySelector('.cart-count').textContent = cartCount;
+    
+    // Actualizar vista del carrito
+    updateCartDisplay();
+    updateCartModal();
+}
+
+// Función para mostrar/ocultar carrito
+function toggleCart() {
+    const overlay = document.getElementById('cart-overlay');
+    overlay.classList.add('active');
+}
+
+function closeCart() {
+    const overlay = document.getElementById('cart-overlay');
+    overlay.classList.remove('active');
+}
+
+// Función para actualizar la visualización del carrito completo
+function updateCartDisplay() {
+    const emptyCart = document.getElementById('empty-cart');
+    const cartContent = document.getElementById('cart-content');
+    const cartItemsList = document.getElementById('cart-items-list');
+    const subtotalElement = document.getElementById('cart-subtotal');
+    const totalElement = document.getElementById('cart-total');
+    
+    if (cart.length === 0) {
+        emptyCart.style.display = 'block';
+        cartContent.style.display = 'none';
+    } else {
+        emptyCart.style.display = 'none';
+        cartContent.style.display = 'block';
+        
+        // Renderizar items del carrito
+        cartItemsList.innerHTML = cart.map(item => `
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <p class="cart-item-price">$${item.price}</p>
+                </div>
+                <div class="cart-item-controls">
+                    <button class="quantity-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
+                </div>
+                <div class="cart-item-total">
+                    $${item.price * item.quantity}
+                </div>
+                <button class="remove-item" onclick="removeFromCart('${item.name}')">🗑️</button>
+            </div>
+        `).join('');
+        
+        // Actualizar totales
+        subtotalElement.textContent = `$${cartTotal}`;
+        totalElement.textContent = `$${cartTotal + 50}`;
+    }
+}
+
+// Función para actualizar el modal del carrito
+function updateCartModal() {
+    const modalItems = document.getElementById('cart-modal-items');
+    const modalTotal = document.getElementById('modal-total');
+    
+    if (cart.length === 0) {
+        modalItems.innerHTML = '<p class="empty-cart-message">Tu carrito está vacío</p>';
+        modalTotal.textContent = '$0';
+    } else {
+        modalItems.innerHTML = cart.map(item => `
+            <div class="cart-modal-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="item-details">
+                    <h5>${item.name}</h5>
+                    <p>$${item.price} x ${item.quantity}</p>
+                </div>
+                <div class="item-total">$${item.price * item.quantity}</div>
+            </div>
+        `).join('');
+        
+        modalTotal.textContent = `$${cartTotal}`;
+    }
+}
+
+// Función para actualizar cantidad
+function updateQuantity(itemName, change) {
+    const item = cart.find(item => item.name === itemName);
+    if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+            removeFromCart(itemName);
+        } else {
+            updateCartUI();
+        }
+    }
+}
+
+// Función para remover item del carrito
+function removeFromCart(itemName) {
+    cart = cart.filter(item => item.name !== itemName);
+    updateCartUI();
+}
+
+// Función para vaciar carrito
+function clearCart() {
+    if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
+        cart = [];
+        updateCartUI();
+    }
+}
+
+// Función para procesar pedido
+function processOrder() {
+    const name = document.getElementById('customer-name').value;
+    const phone = document.getElementById('customer-phone').value;
+    const address = document.getElementById('customer-address').value;
+    const time = document.getElementById('delivery-time').value;
+    const payment = document.querySelector('input[name="payment"]:checked').value;
+    
+    if (!name || !phone || !address || !time) {
+        alert('Por favor completa todos los campos requeridos.');
+        return;
+    }
+    
+    if (cart.length === 0) {
+        alert('Tu carrito está vacío. Agrega algunos productos antes de procesar el pedido.');
+        return;
+    }
+    
+    // Crear mensaje para WhatsApp
+    const orderDetails = cart.map(item => 
+        `• ${item.name} x${item.quantity} - $${item.price * item.quantity}`
+    ).join('\\n');
+    
+    const total = cartTotal + 50;
+    const paymentMethod = payment === 'cash' ? 'Efectivo' : 
+                         payment === 'card' ? 'Tarjeta' : 'Transferencia';
+    
+    const message = `🍽️ *NUEVO PEDIDO - El Rincón de Milly*\\n\\n` +
+                   `👤 *Cliente:* ${name}\\n` +
+                   `📱 *Teléfono:* ${phone}\\n` +
+                   `📍 *Dirección:* ${address}\\n` +
+                   `⏰ *Hora de entrega:* ${time}\\n` +
+                   `💳 *Método de pago:* ${paymentMethod}\\n\\n` +
+                   `🛒 *Productos:*\\n${orderDetails}\\n\\n` +
+                   `💰 *Subtotal:* $${cartTotal}\\n` +
+                   `🚚 *Envío:* $50\\n` +
+                   `💵 *TOTAL:* $${total}`;
+    
+    // Enviar por WhatsApp
+    const whatsappUrl = `https://wa.me/18295138318?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Limpiar carrito después del pedido
+    cart = [];
+    updateCartUI();
+    
+    // Mostrar mensaje de confirmación
+    alert('¡Pedido enviado! Te contactaremos pronto para confirmar tu orden.');
+}
+
+// Función para mostrar notificación
+function showCartNotification(itemName) {
+    // Crear notificación temporal
+    const notification = document.createElement('div');
+    notification.className = 'cart-notification';
+    notification.innerHTML = `✅ ${itemName} agregado al carrito`;
+    
+    document.body.appendChild(notification);
+    
+    // Mostrar notificación
+    setTimeout(() => notification.classList.add('show'), 100);
+    
+    // Ocultar y remover notificación
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => document.body.removeChild(notification), 300);
+    }, 2000);
+}
+
+// Inicializar carrito al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    updateCartUI();
+});
+</script>
+
+</body>
+</html>
